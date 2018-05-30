@@ -1,0 +1,25 @@
+{
+  "name": "burger-spot",
+  "version": "1.0.0",
+  "description": "Burger themed web app utilizing mySql database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Martnick1/Burger-Spot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Martnick1/Burger-Spot/issues"
+  },
+  "homepage": "https://github.com/Martnick1/Burger-Spot#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  }
+}
