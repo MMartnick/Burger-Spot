@@ -14,21 +14,13 @@ function printValue(num) {
 
 //function to object values to SQL syntax
 function objToSql(ob) {
-    var arr = [];
+	var arr = [];
 
-    //loop through keys and push key as a string
-    for (var key in ob) {
-        var value = ob[key];
+	for (var key in ob) {
+		arr.push(key + "=" + ob[key]);
+	}
 
-        if (Object.hasOwnProperty.call(ob, key)) {
-            if (typeof value === "string" && value.indexOf(" ") >= 0) {
-                value = "'" + value + "'";
-            }
-            arr.push(key + "=" + value);
-        }
-    }
-
-    return arr.tostring();
+	return arr.toString();
 }
 
 // object for all SQL statement functions
@@ -82,6 +74,7 @@ var orm = {
         });
     },
 
+    /*
     deleteOne: function(table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
@@ -94,7 +87,7 @@ var orm = {
 
             cb(result);
         });
-    }
+    }*/
 };
 
 module.exports = orm;

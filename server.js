@@ -1,12 +1,13 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
 
 var PORT = process.env.PORT || 8080;
 
 var app = express();
 
-// Serve static content for the app from the "views" directory in the application directory.
-app.use(express.static("views"));
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,8 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
+// Override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
+
 // Links CSS
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
